@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="SignalManager" name="TabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="TabWidgetWidgetPage1">
+       <attribute name="title">
+        <string>Accelerometer</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="ReseterSlider" name="VerticalMovementSlider">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="minimum">
+           <number>-100</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="LCDLayout">
+          <item>
+           <widget class="QLCDNumber" name="AccelerometerPageXLCD"/>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="AccelerometerPageYLCD"/>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="AccelerometerPageZLCD"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="ReseterDial" name="RotationDial">
+          <property name="minimum">
+           <number>-100</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="TabWidgetWidgetPage2">
+       <attribute name="title">
+        <string>Manual</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="UpDownButtonsLayout_2">
+          <item>
+           <widget class="QPushButton" name="ManualPageUpButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ManualPageDownButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="DirectionButtonsLayout">
+          <item row="3" column="1">
+           <widget class="QPushButton" name="ManualPageBackwardsButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Backwards</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="ManualPageLeftButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Left</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="ManualPageForwardButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Forward</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="ManualPageRightButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Right</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="ManualPageClockwiseButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Clockwise</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="ManualPageCounterclockwiseButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Counterclockwise</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ReseterDial</class>
+   <extends>QDial</extends>
+   <header location="global">reseterdial.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ReseterSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">reseterslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SignalManager</class>
+   <extends>QTabWidget</extends>
+   <header location="global">signalmanager.h</header>
+   <container>1</container>
+   <slots>
+    <signal>xRotationChanged(int)</signal>
+    <signal>yRotationChanged(int)</signal>
+    <signal>zRotationChanged(int)</signal>
+    <slot>rotationDialMoved(int)</slot>
+    <slot>verticalMovementSliderMoved(int)</slot>
+    <slot>updateReading()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>VerticalMovementSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TabWidget</receiver>
+   <slot>verticalMovementSliderMoved(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>23</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RotationDial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TabWidget</receiver>
+   <slot>rotationDialMoved(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TabWidget</sender>
+   <signal>xRotationChanged(int)</signal>
+   <receiver>AccelerometerPageXLCD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>400</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TabWidget</sender>
+   <signal>yRotationChanged(int)</signal>
+   <receiver>AccelerometerPageYLCD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TabWidget</sender>
+   <signal>zRotationChanged(int)</signal>
+   <receiver>AccelerometerPageZLCD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>466</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
