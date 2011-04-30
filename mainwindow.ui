@@ -62,7 +62,35 @@
            <widget class="QLCDNumber" name="AccelerometerPageYLCD"/>
           </item>
           <item>
-           <widget class="QLCDNumber" name="AccelerometerPageZLCD"/>
+           <widget class="QPushButton" name="BluetoothScanButton">
+            <property name="text">
+             <string>Scan</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="BluetoothStatusTitleLabel">
+              <property name="text">
+               <string>Bluetooth status:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="BluetoothStatusLabel">
+              <property name="text">
+               <string>Off</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -233,9 +261,12 @@
     <signal>xRotationChanged(int)</signal>
     <signal>yRotationChanged(int)</signal>
     <signal>zRotationChanged(int)</signal>
+    <signal>bluetoothStatusChanged(QString)</signal>
+    <signal>scanEnabled(bool)</signal>
     <slot>rotationDialMoved(int)</slot>
     <slot>verticalMovementSliderMoved(int)</slot>
     <slot>updateReading()</slot>
+    <slot>scanForBluetoothDevice()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -264,8 +295,8 @@
    <slot>rotationDialMoved(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>271</x>
-     <y>170</y>
+     <x>568</x>
+     <y>222</y>
     </hint>
     <hint type="destinationlabel">
      <x>342</x>
@@ -284,8 +315,8 @@
      <y>342</y>
     </hint>
     <hint type="destinationlabel">
-     <x>400</x>
-     <y>133</y>
+     <x>357</x>
+     <y>139</y>
     </hint>
    </hints>
   </connection>
@@ -300,24 +331,56 @@
      <y>346</y>
     </hint>
     <hint type="destinationlabel">
-     <x>448</x>
-     <y>207</y>
+     <x>357</x>
+     <y>223</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>TabWidget</sender>
-   <signal>zRotationChanged(int)</signal>
-   <receiver>AccelerometerPageZLCD</receiver>
-   <slot>display(int)</slot>
+   <signal>bluetoothStatusChanged(QString)</signal>
+   <receiver>BluetoothStatusLabel</receiver>
+   <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>466</x>
-     <y>343</y>
+     <x>351</x>
+     <y>50</y>
     </hint>
     <hint type="destinationlabel">
-     <x>505</x>
-     <y>297</y>
+     <x>303</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BluetoothScanButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TabWidget</receiver>
+   <slot>scanForBluetoothDevice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>241</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TabWidget</sender>
+   <signal>scanEnabled(bool)</signal>
+   <receiver>BluetoothScanButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>241</y>
     </hint>
    </hints>
   </connection>
